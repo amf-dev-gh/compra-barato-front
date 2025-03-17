@@ -6,6 +6,8 @@
 
 <h3>Es una aplicación que se encarga de hacer el scrapping de algunos supermercados como Consum y Mercadona (proximamente implementando nuevos supermercados) para luego ofrecerte una lista de productos con los cuales poder hacer una comparativa. Adicional la opcion de crear una lista de compras con los productos seleccionados y enviara como mensaje vía WhatsApp.</h3>
 
+<h2>Link al repositorio de back-end Spring Boot: <a href="https://github.com/amf-dev-gh/compra-barato-back">Compra Barato - Microservicios</a></h2>
+
 <br/>
 
 <hr/>
