@@ -1,4 +1,4 @@
-![logo-proyecto](https://github.com/amf-dev-gh/compra-barato-front/issues/1#issue-2924969436)
+![logo-proyecto](https://github.com/user-attachments/assets/bbff549a-c68e-4e6f-9c28-e3e6f0177bd7)
 
 <h1>Compra Barato</h1>
 
