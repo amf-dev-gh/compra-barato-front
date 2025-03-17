@@ -1,58 +1,20 @@
-# CompraBarato
+![logo-proyecto](https://github.com/amf-dev-gh/compra-barato-front/issues/1#issue-2924969436)
+
+<h1>Compra Barato</h1>
+
+<h3><em>Diseñado en IDE Visual studio code utilizando como framework Angular, conectandose a una API REST creada con SpringBoot</em></h3>
+
+<h3>Es una aplicación que se encarga de hacer el scrapping de algunos supermercados como Consum y Mercadona (proximamente implementando nuevos supermercados) para luego ofrecerte una lista de productos con los cuales poder hacer una comparativa. Adicional la opcion de crear una lista de compras con los productos seleccionados y enviara como mensaje vía WhatsApp.</h3>
+
+<br/>
+
+<hr/>
+<p>Creador: Andres Mariano Fernández</p>
+<p>Año: 2025</p>
+
+# Compra Barato
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.8.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
 ## Additional Resources
 
