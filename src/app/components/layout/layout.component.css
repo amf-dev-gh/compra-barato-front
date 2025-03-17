@@ -1,0 +1,17 @@
+.navbar{
+  background-color: var(--color-base);
+  height: 8vh;
+}
+
+.nav-link, .navbar-brand, .footer{
+  color: white;
+}
+
+.footer{
+  background-color:var(--color-base);
+  height: 8vh;
+}
+
+a{
+  color: white;
+}

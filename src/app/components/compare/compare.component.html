@@ -1,0 +1,97 @@
+<div class="container d-flex flex-column justify-content-start">
+  @if(searching){
+  <div class="text-center">
+    <h4 class="my-4">{{loadTitle}}</h4>
+    <div class="my-4">
+      <span class="loader"></span>
+    </div>
+  </div>
+  }
+
+  @else if(products.length != 0 || selectedProducts.length !=0){
+  <div class="row mt-3">
+    <div class="col-md-8 table-products">
+      <div class="d-flex justify-content-between align-items-center">
+        <h4><small>{{products.length}}</small> productos encontrados para "<span>{{value}}</span>"</h4>
+        <button routerLink="/compare" class="btn btn-sm btn-outline-success">Volver</button>
+      </div>
+      <table class="table table-hover table-striped table-sm table-light">
+        <thead>
+          <tr>
+            <th scope="col" (click)="orderByName()" class="btn-name">
+              Nombre
+              @if (!orderAsc) {<i class="bi bi-caret-up-square"></i>}
+              @else {<i class="bi bi-caret-down-square"></i>}
+            </th>
+            <th scope="col" class="text-center">Unidad</th>
+            <th scope="col" class="text-center">Cantidad</th>
+            <th scope="col" class="text-center">Precio</th>
+            <th scope="col" class="text-center">Tienda</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          @for (p of products; track $index) {
+          <tr>
+            <td>
+              <span class="text-success" (click)="addProduct(p)">
+                <i class="bi bi-plus-circle-fill btn-list"></i>
+              </span>
+              {{p.name}}
+            </td>
+            <td class="text-center">{{p.unit}}</td>
+            <td class="text-center">{{p.measurementUnit}}</td>
+            <td class="text-center">{{p.unitPrice}}</td>
+            <td class="text-center">{{p.provider}}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-4  table-products">
+      <h4>Productos a comparar</h4>
+
+      <table class="table table-hover table-striped table-sm table-light">
+        <thead>
+          <tr>
+            <th class="">Nombre</th>
+            <th class="text-center">Precio</th>
+            <th class="text-center">Tienda</th>
+            <th class="text-center"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (p of selectedProducts; track $index) {
+          <tr>
+            <td>
+              <span class="text-danger" (click)="deleteProduct(p)">
+                <i class="bi bi-dash-circle-fill btn-list"></i>
+              </span>
+              {{p.name}}
+            </td>
+            <td class="text-center">{{p.unitPrice}}</td>
+            <td class="text-center">{{p.provider}}</td>
+            <td class="text-center text-success">
+              <span class="text-success" (click)="addToMyList(p)">
+                <i class="bi bi-file-earmark-plus-fill btn-list"></i>
+              </span>
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      @if (cheapestProduct != null) {
+      <h6>Más económico: <span class="text-success">{{cheapestProduct.name}} <i class="bi bi-file-earmark-plus-fill btn-list" (click)="addToMyList(cheapestProduct)"></i></span></h6>
+      <h6>Tienda: <span class="text-success">{{cheapestProduct.provider}}</span></h6>
+      <h6>Precio: <span class="text-success">{{cheapestProduct.unitPrice}}</span></h6>
+      }
+    </div>
+  </div>
+  }
+  @else {
+  <div class="row mt-3">
+    <h4 class="text-center">No se encontraron productos. Intente nuevamente con otros valores.</h4>
+  </div>
+  }
+</div>

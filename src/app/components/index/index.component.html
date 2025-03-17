@@ -1,0 +1,25 @@
+<div class="container d-flex flex-column justify-content-start">
+  <div class="text-center mt-5">
+    <img src="logo-completo-compra_barato.png" alt="logo-compra-barato" class="img-logo text-center">
+  </div>
+  <form [formGroup]="searchForm" class="row justify-content-center align-content-center" role="search"
+    (ngSubmit)="search()">
+    <div class="col-md-7">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar productos" aria-label="Buscar"
+          aria-describedby="button-addon2" formControlName="value" autofocus>
+        <button class="btn btn-outline-success" type="submit" id="button-addon2" [disabled]="searchForm.invalid"><i
+            class="bi bi-search"></i></button>
+      </div>
+    </div>
+  </form>
+  <div class="row justify-content-center gap-4 mt-5">
+    @for (s of stores; track $index) {
+    <div class="col-auto">
+      <img [src]="s.urlImg" alt="logo tienda" class="logo-store">
+      <p class="text-center"><small><a [href]="s.urlMaps" target="_blank" class="link-store">Ver ubicaciones <i
+              class="bi bi-geo-alt"></i></a></small></p>
+    </div>
+    }
+  </div>
+</div>

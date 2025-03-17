@@ -1,0 +1,15 @@
+.container{
+  height: 84vh;
+}
+
+.btn-outline-success{
+  border-color: var(--color-base);
+}
+
+.btn-outline-success:hover{
+  background-color: var(--color-base);
+}
+
+.btn-list:hover{
+  cursor: pointer;
+}

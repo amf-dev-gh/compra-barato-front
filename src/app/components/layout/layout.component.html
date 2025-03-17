@@ -1,0 +1,33 @@
+<!-- Barra navegación -->
+<header>
+  <nav class="navbar navbar-expand-lg sticky-top" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link mx-2" routerLink="/index" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">Inicio</a>
+          <a class="nav-link mx-2" routerLink="/compare" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">Comparador de precios</a>
+          <a class="nav-link mx-2" routerLink="/my-list" data-bs-toggle="collapse"
+            data-bs-target=".navbar-collapse.show">Lista de compras</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- FIN Barra navegación -->
+
+<!-- Contenido ruteable -->
+<router-outlet></router-outlet>
+<!-- FIN Contenido ruteable -->
+
+<!-- Footer -->
+<footer class="container-fluid text-center footer align-items-center">
+  <p>Compra Barato &copy;</p>
+  <p>Andres Mariano Fernández - <a href="https://amf-dev.site">amf-dev.site</a></p>
+</footer>
+<!-- Fin Footer -->

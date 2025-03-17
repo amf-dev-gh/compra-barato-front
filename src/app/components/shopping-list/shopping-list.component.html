@@ -1,0 +1,78 @@
+<div class="container d-flex flex-column justify-content-start text-center">
+  @if (myList.length === 0) {
+  <h4 class="text-center my-3">Aun no ha agregado elementos a su lista de compras</h4>
+  <div class="col-auto">
+    <button class="btn btn-sm btn-outline-success my-2" routerLink="/index">
+      <i class="bi bi-search"></i> Buscar productos</button>
+  </div>
+  }
+  @else {
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <h4 class="my-4">Mis listado de compras</h4>
+      <table class="table table-hover table-striped table-sm table-light">
+        <thead>
+          <tr>
+            <th scope="col" class="btn-name"><i class="bi bi-dash-square"></i></th>
+            <th scope="col" class="btn-name">Nombre</th>
+            <th scope="col" class="text-center">Cantidad</th>
+            <th scope="col" class="text-center">Precio</th>
+            <th scope="col" class="text-center">Tienda</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          @for (p of myList; track $index) {
+          <tr>
+            <td class="text-danger" (click)="deleteProduct(p.name)"><i class="bi bi-trash btn-list"></i></td>
+            <td>{{p.name}}</td>
+            <td class="text-center">{{p.measurementUnit}}</td>
+            <td class="text-center">{{p.unitPrice}}</td>
+            <td class="text-center">{{p.provider}}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-auto">
+      <button class="btn btn-sm btn-outline-danger" (click)="clearList()">Borrar todo</button>
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-sm btn-outline-success" routerLink="/index">Buscar mas productos</button>
+    </div>
+    <div class="col-auto d-flex flex-column">
+      <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" [disabled]="myList.length<5"><i class="bi bi-whatsapp"></i> Enviar lista por WhatsApp</button>
+      @if (myList.length<5) {<span class="text-secondary"><small>Mínimo 5 productos.</small></span>}
+    </div>
+  </div>
+  }
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Datos de envio</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form [formGroup]="form" (submit)="sendMessage()">
+        <div class="modal-body">
+          <div class="form-floating mb-3">
+            <input formControlName="name" type="text" class="form-control" id="floatingInput" placeholder="">
+            <label for="floatingInput">Nombre</label>
+          </div>
+          <div class="form-floating">
+            <input formControlName="phoneNumber" type="text" class="form-control" id="floatingPassword" placeholder="">
+            <label for="floatingPassword">Teléfono</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-outline-success" [disabled]="form.invalid"><i class="bi bi-whatsapp"></i> Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
